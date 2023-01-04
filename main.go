@@ -45,7 +45,7 @@ func main() {
 	c := bot.Client()
 
 	bot.HandleMessage(".*human:*", func(m *tbot.Message) {
-		c.SendMessage(m.Chat.ID, getChatGPTresponse(ctx, ".*human:*"))
+		c.SendMessage(m.Chat.ID, getChatGPTresponse(ctx, m.Text))
 	})
 	log.Fatal(bot.Start())
 }
