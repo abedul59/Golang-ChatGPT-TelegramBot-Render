@@ -1,13 +1,8 @@
 package main
 
 import (
-
-
 	"log"
 	"os"
-
-
-
 	"github.com/yanzay/tbot/v2"
 )
 
@@ -18,9 +13,6 @@ func main() {
 	c := bot.Client()
 	bot.HandleMessage("ping", func(m *tbot.Message) {
 		c.SendMessage(m.Chat.ID, "pong")
-	})
-	bot.HandleMessage(".*yo.*", func(m *tbot.Message) {
-		c.SendMessage(m.Chat.ID, "hello!hello!hello!")
 	})
 	log.Fatal(bot.Start())
 }
